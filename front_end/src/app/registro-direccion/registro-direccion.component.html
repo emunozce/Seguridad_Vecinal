@@ -1,0 +1,80 @@
+<div class="container_principal">
+    <div class="card text-center">
+        <div class="card-header">
+            Registro de Medios de Contacto
+        </div>
+        <div class="card-body">
+            <form [formGroup]="direccion_form">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Calle</label>
+                    <input type="text" class="form-control" formControlName="calle" id="nombre"
+                        aria-describedby="telefono_personalHelp">
+                </div>
+                <div class="alert alert-danger mt-2"
+                    [hidden]="direccion_form.get('calle')?.valid || direccion_form.get('calle')?.pristine">
+                    <span *ngIf="direccion_form.get('calle')?.errors?.['required']">
+                        La calle es requerida.
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <label for="num_ext" class="form-label">Numero Exterior</label>
+                    <input type="text" class="form-control" formControlName="num_ext" id="num_ext">
+                </div>
+                <div class="alert alert-danger mt-2"
+                    [hidden]="direccion_form.get('num_ext')?.valid || direccion_form.get('num_ext')?.pristine">
+                    <span *ngIf="direccion_form.get('num_ext')?.errors?.['required']">
+                        El numero exterior es requerido.
+                    </span>
+                    <span *ngIf="direccion_form.get('num_ext')?.errors?.['pattern']">
+                        El numero exterior no es valido.
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <label for="num_int" class="form-label">Numero Interior</label>
+                    <input type="text" class="form-control" formControlName="num_int" id="num_int">
+                </div>
+                <div class="alert alert-danger mt-2"
+                    [hidden]="direccion_form.get('num_int')?.valid || direccion_form.get('num_int')?.pristine">
+                    <span *ngIf="direccion_form.get('num_int')?.errors?.['pattern']">
+                        El numero interior no es valido.
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <label for="fracc" class="form-label">Fraccionamiento</label>
+                    <input type="text" class="form-control" formControlName="fracc" id="fracc">
+                </div>
+                <div class="alert alert-danger mt-2"
+                    [hidden]="direccion_form.get('fracc')?.valid || direccion_form.get('fracc')?.pristine">
+                    <span *ngIf="direccion_form.get('fracc')?.errors?.['required']">
+                        El fraccionamiento es requerido.
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <label for="cp" class="form-label">CP</label>
+                    <input type="text" class="form-control" formControlName="cp" id="cp">
+                </div>
+                <div class="alert alert-danger mt-2"
+                    [hidden]="direccion_form.get('cp')?.valid || direccion_form.get('cp')?.pristine">
+                    <span *ngIf="direccion_form.get('cp')?.errors?.['required']">
+                        El codigo postal es requerido.
+                    </span>
+                    <span *ngIf="direccion_form.get('cp')?.errors?.['pattern']">
+                        El codigo postal no es valido.
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <label for="estado" class="form-label">Estado</label>
+                    <input type="text" class="form-control" formControlName="estado" id="estado">
+                </div>
+                <div class="alert alert-danger mt-2"
+                    [hidden]="direccion_form.get('estado')?.valid || direccion_form.get('estado')?.pristine">
+                    <span *ngIf="direccion_form.get('estado')?.errors?.['required']">
+                        El estado es requerido.
+                    </span>
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="direccion_form.invalid"
+                    (click)="send_to_api()" routerLink="/registro_medios_contacto">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>

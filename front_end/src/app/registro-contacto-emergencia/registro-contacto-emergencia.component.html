@@ -1,0 +1,48 @@
+<div class="container_principal">
+    <div class="card text-center">
+        <div class="card-header">
+            Registro de Contacto de Emergencia
+        </div>
+        <div class="card-body">
+            <form [formGroup]="contacto_emergencia_form">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre(s)</label>
+                    <input type="text" class="form-control" formControlName="name" id="nombre"
+                        aria-describedby="telefono_contactoHelp">
+                </div>
+                <div class="alert alert-danger mt-2"
+                    [hidden]="contacto_emergencia_form.get('name')?.valid || contacto_emergencia_form.get('name')?.pristine">
+                    <span *ngIf="contacto_emergencia_form.get('name')?.errors?.['required']">
+                        El nombre es requerido.
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <label for="apellido" class="form-label">Apellido(s)</label>
+                    <input type="text" class="form-control" formControlName="lastname" id="apellido"
+                        aria-describedby="telefono_contactoHelp">
+                </div>
+                <div class="alert alert-danger mt-2"
+                    [hidden]="contacto_emergencia_form.get('lastname')?.valid || contacto_emergencia_form.get('lastname')?.pristine">
+                    <span *ngIf="contacto_emergencia_form.get('lastname')?.errors?.['required']">
+                        El apellido es requerido.
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <label for="telefono_contacto" class="form-label">Telefono de Contacto</label>
+                    <input type="text" class="form-control" formControlName="telefono_contacto" id="telefono_contacto">
+                </div>
+                <div class="alert alert-danger mt-2"
+                    [hidden]="contacto_emergencia_form.get('telefono_contacto')?.valid || contacto_emergencia_form.get('telefono_contacto')?.pristine">
+                    <span *ngIf="contacto_emergencia_form.get('telefono_contacto')?.errors?.['required']">
+                        El telefono de contacto es requerido.
+                    </span>
+                    <span *ngIf="contacto_emergencia_form.get('telefono_contacto')?.errors?.['pattern']">
+                        El telefono de contacto no es valido.
+                    </span>
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="contacto_emergencia_form.invalid"
+                    (click)="on_send()" routerLink="/registro_info_medica">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>

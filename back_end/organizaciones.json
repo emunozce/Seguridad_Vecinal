@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "name": "Direccion de Proteccion Civil Municipal",
+        "phone": "4499182811"
+    },
+    {
+        "id": 2,
+        "name": "DIF Municipal",
+        "phone": "4499127720"
+    },
+    {
+        "id": 3,
+        "name": "Estacion De Bomberos Del Municipio De Aguascalientes",
+        "phone": "4499704053"
+    },
+    {
+        "id": 4,
+        "name": "Policia Cibernetica",
+        "phone": "4493462341"
+    },
+    {
+        "id": 5,
+        "name": "Secretaria de Seguridad Publica",
+        "phone": "4499102055"
+    },
+    {
+        "id": 6,
+        "name": "Direccion De Asuntos Internos De Seguridad Publica",
+        "phone": "4499966291"
+    },
+    {
+        "id": 7,
+        "name": "Secretaría de Seguridad Pública del Estado",
+        "phone": "4499102055"
+    },
+    {
+        "id": 8,
+        "name": "Fiscalía General del Estado de Aguascalientes",
+        "phone": "4494782800"
+    },
+    {
+        "id": 9,
+        "name": "Policia Ministerial",
+        "phone": "4494782800"
+    }
+]

@@ -1,0 +1,40 @@
+<div class="container_principal">
+    <div class="card text-center">
+        <div class="card-header">
+            Registro de Medios de Contacto
+        </div>
+        <div class="card-body">
+            <form [formGroup]="medio_contacto_form">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Telefono de Casa</label>
+                    <input type="text" class="form-control" formControlName="telefono_casa" id="nombre"
+                        aria-describedby="telefono_personalHelp">
+                </div>
+                <div class="alert alert-danger mt-2"
+                    [hidden]="medio_contacto_form.get('telefono_casa')?.valid || medio_contacto_form.get('telefono_casa')?.pristine">
+                    <span *ngIf="medio_contacto_form.get('telefono_casa')?.errors?.['required']">
+                        El telefono de casa es requerido.
+                    </span>
+                    <span *ngIf="medio_contacto_form.get('telefono_casa')?.errors?.['pattern']">
+                        El telefono de casa no es valido.
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <label for="telefono_personal" class="form-label">Telefono Personal</label>
+                    <input type="text" class="form-control" formControlName="telefono_personal" id="telefono_personal">
+                </div>
+                <div class="alert alert-danger mt-2"
+                    [hidden]="medio_contacto_form.get('telefono_personal')?.valid || medio_contacto_form.get('telefono_personal')?.pristine">
+                    <span *ngIf="medio_contacto_form.get('telefono_personal')?.errors?.['required']">
+                        El telefono personal es requerido.
+                    </span>
+                    <span *ngIf="medio_contacto_form.get('telefono_personal')?.errors?.['pattern']">
+                        El telefono personal no es valido.
+                    </span>
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="medio_contacto_form.invalid"
+                    (click)="send_to_api()" routerLink="/registro_contacto_emergencia">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>

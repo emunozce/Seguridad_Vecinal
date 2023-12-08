@@ -1,0 +1,168 @@
+<div class="container">
+    <div id="tabla">
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Nombre</td>
+                    <td> Apellido </td>
+                    <td> Email </td>
+                </tr>
+            </thead>
+            <tbody>
+                @for(usr of usuarios; track usr.id) {
+                <tr>
+                    <td>
+                        {{ usr.id }}
+                    </td>
+                    <td>
+                        {{ usr.name }}
+                    </td>
+                    <td>
+                        {{ usr.lastname }}
+                    </td>
+                    <td>
+                        {{ usr.email }}
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="container">
+    <div id="tabla">
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Calle</td>
+                    <td> Numero Exterior </td>
+                    <td> Numero Interior </td>
+                    <td> Fraccionamiento </td>
+                    <td> C.P. </td>
+                    <td> Estado </td>
+                </tr>
+            </thead>
+            <tbody>
+                @for(direc of direcciones; track direc.id) {
+                <tr>
+                    <td>
+                        {{ direc.id }}
+                    </td>
+                    <td>
+                        {{ direc.calle }}
+                    </td>
+                    <td>
+                        {{ direc.num_ext }}
+                    </td>
+                    <td>
+                        {{ direc.num_int }}
+                    </td>
+                    <td>
+                        {{ direc.fracc }}
+                    </td>
+                    <td>
+                        {{ direc.cp }}
+                    </td>
+                    <td>
+                        {{ direc.estado }}
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="container">
+    <div id="tabla">
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Telefono de Casa</td>
+                    <td> Telefono Personal </td>
+                </tr>
+            </thead>
+            <tbody>
+                @for(mc of medios_contacto; track mc.id) {
+                <tr>
+                    <td>
+                        {{ mc.id }}
+                    </td>
+                    <td>
+                        {{ mc.telefono_casa }}
+                    </td>
+                    <td>
+                        {{ mc.telefono_personal }}
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="container">
+    <div id="tabla">
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Nombre</td>
+                    <td> Apellido </td>
+                    <td> Telefono </td>
+                </tr>
+            </thead>
+            <tbody>
+                @for(ce of contactos_emergencia; track ce.id) {
+                <tr>
+                    <td>
+                        {{ ce.id }}
+                    </td>
+                    <td>
+                        {{ ce.nombre }}
+                    </td>
+                    <td>
+                        {{ ce.lastname }}
+                    </td>
+                    <td>
+                        {{ ce.telefono_contacto }}
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="container">
+    <div id="tabla">
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Tipo de Sangre</td>
+                    <td> Enfermedades Cronicas </td>
+                </tr>
+            </thead>
+            <tbody>
+                @for(im of infos_medica; track im.id) {
+                <tr>
+                    <td>
+                        {{ im.id }}
+                    </td>
+                    <td>
+                        {{ im.tipo_sangre }}
+                    </td>
+                    <td>
+                        {{ im.enfermedades_cronicas }}
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="container_principal">
+    <div class="card text-center">
+        <div class="card-header">
+            Registro de Informacion Medica
+        </div>
+        <div class="card-body">
+            <form [formGroup]="info_medica_form">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Tipo de Sangre</label>
+                    <input type="text" class="form-control" formControlName="tipo_sangre" id="nombre"
+                        aria-describedby="telefono_personalHelp">
+                </div>
+                <div class="alert alert-danger mt-2"
+                    [hidden]="info_medica_form.get('tipo_sangre')?.valid || info_medica_form.get('tipo_sangre')?.pristine">
+                    <span *ngIf="info_medica_form.get('tipo_sangre')?.errors?.['required']">
+                        El tipo de sangre es requerido.
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <label for="enfermedades_cronicas" class="form-label">Enfermedades Cronicas</label>
+                    <input type="text" class="form-control" formControlName="enfermedades_cronicas"
+                        id="enfermedades_cronicas">
+                </div>
+                <div class="alert alert-danger mt-2"
+                    [hidden]="info_medica_form.get('enfermedades_cronicas')?.valid || info_medica_form.get('enfermedades_cronicas')?.pristine">
+                    <span *ngIf="info_medica_form.get('enfermedades_cronicas')?.errors?.['required']">
+                        El campo es requerido.
+                    </span>
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="info_medica_form.invalid"
+                    (click)="send_to_api()" routerLink="">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>

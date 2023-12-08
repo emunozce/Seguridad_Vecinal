@@ -16,12 +16,12 @@ app.add_middleware(
     CORSMiddleware, allow_origins=origins, allow_methods=["*"], allow_headers=["*"]
 )
 
-path_usr_file = "/mnt/usuarios.json"
-path_dir_file = "/mnt/direccion.json"
-path_info_medica_file = "/mnt/info_medica.json"
-path_medios_contacto_file = "/mnt/medios_contacto.json"
-path_contacto_emerg_file = "/mnt/contacto_emergencia.json"
-path_organizaciones_file = "/mnt/organizaciones.json"
+path_usr_file = "../../usuarios.json"
+path_dir_file = "../../direccion.json"
+path_info_medica_file = "../../info_medica.json"
+path_medios_contacto_file = "../../medios_contacto.json"
+path_contacto_emerg_file = "../../contacto_emergencia.json"
+path_organizaciones_file = "../../organizaciones.json"
 # path_organizaciones_file = "/mnt/organizaciones.json"
 
 # BaseModel se encarga de transformar las clases en formato JSON

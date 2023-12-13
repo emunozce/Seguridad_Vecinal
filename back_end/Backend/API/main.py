@@ -22,7 +22,6 @@ path_info_medica_file = "../../info_medica.json"
 path_medios_contacto_file = "../../medios_contacto.json"
 path_contacto_emerg_file = "../../contacto_emergencia.json"
 path_organizaciones_file = "../../organizaciones.json"
-# path_organizaciones_file = "/mnt/organizaciones.json"
 
 # BaseModel se encarga de transformar las clases en formato JSON
 # Preferentemente usar tipado en las variables
